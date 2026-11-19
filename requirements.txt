@@ -1,0 +1,23 @@
+# FinSight-Agent 运行依赖
+# Phase 1 实测通过的组合（Python 3.10.6 / Windows）
+akshare==1.18.88
+pandas==2.2.2
+numpy==2.1.1
+pydantic==2.13.5
+python-dotenv==1.2.3
+
+# Phase 2：多智能体编排
+# openai 直接兼容 DeepSeek 官方 API（base_url=https://api.deepseek.com），
+# 刻意不用 langchain-openai 等厚重封装，降低版本冲突与调试成本。
+openai==3.55.0
+langgraph==1.2.22
+
+# Phase 3：年报 PDF 附注 RAG（全部为本地计算，**不需要任何 Embedding API Key**）
+pymupdf==1.28.2      # PDF 解析 + 表格抽取（find_tables）
+jieba==0.42.1        # 中文分词（含会计专有词典注入）
+rank-bm25==0.2.2     # BM25 全文检索
+
+# Phase 4：投研工作台与打印级导出（均为纯 Python，无外部二进制依赖）
+streamlit==1.65.0    # 交互式投研工作台
+plotly==7.1.0        # 交互图表（成长/瀑布/现金流/M-Score/同业）
+markdown==3.10.3     # Markdown → HTML（自包含打印报告的渲染内核）

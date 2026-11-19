@@ -1,0 +1,46 @@
+# ---- 环境与密钥 ----
+.env
+.env.local
+*.key
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+venv/
+.venv/
+env/
+ENV/
+.python-version
+
+# ---- 数据缓存与产出（可再生，不入库）----
+data/cache/
+data/reports/
+data/pdfs/
+*.csv.tmp
+probe*.py
+probe_*.txt
+*.log
+
+# ---- Streamlit ----
+.streamlit/secrets.toml
+
+# ---- 测试与工具 ----
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---- IDE / 系统 ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
